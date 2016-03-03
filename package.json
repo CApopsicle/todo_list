@@ -1,0 +1,44 @@
+{
+  "name": "todo_list",
+  "version": "1.0.0",
+  "description": "todo_list React.js",
+  "main": "/bundle.js",
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack-dev-server --colors ",
+    "start": "npm run dev"
+  },
+  "author": "Kelly",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.5.2",
+    "babel-jest": "^6.0.1",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-react": "^6.5.0",
+    "css-loader": "^0.23.1",
+    "node-sass": "^3.4.2",
+    "nodemon": "^1.3.7",
+    "style-loader": "^0.13.0",
+    "webpack": "^1.8.7",
+    "webpack-dev-server": "^1.8.1"
+  },
+  "dependencies": {
+    "babel-loader": "^6.2.4",
+    "bluebird": "^3.3.3",
+    "css-loader": "^0.23.1",
+    "events": "^1.1.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.8.5",
+    "flux": "^2.1.1",
+    "grommet": "^0.5.3",
+    "keymirror": "^0.1.1",
+    "object-assign": "^4.0.1",
+    "path": "^0.12.7",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-fa": "^4.0.0",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.7"
+  }
+}

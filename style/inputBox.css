@@ -1,0 +1,19 @@
+.Boxes{
+	width:120px;
+	cursor: pointer;
+	margin-bottom: 10px;
+}
+.taskerHeader {
+	display: inline-flex;
+	justify-content: space-between;
+}
+.inputTask,.addOneButton{		
+	box-sizing: border-box;
+	font-size: 1.25em;
+	padding: 14px;
+}
+.addOneButton {
+	background: #1dd2af;
+	border-left: 1px solid #1dd2af;		
+}
+	
