@@ -21,12 +21,14 @@ module.exports = {
         query:{presets:['react']},
         include: path.join(__dirname, 'scripts')
       },
-      { test: /\.css$/, loader: "style-loader!css-loader" },
+      { test: /\.css$/,
+        loader: "style-loader!css-loader"
+      },
       {
         test: /\.(otf|eot|svg|ttf|woff)\??/,
         loader: 'url-loader?limit=8192'
       }
     ]
-  },
+  }
 
 };

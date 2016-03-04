@@ -1,5 +1,5 @@
 import React from 'react';
-import AppActions from '../actions/appActions.js';
+import { create, checked, deleted } from '../actions/appActions.js';
 
 
 var ENTER_KEY_CODE = 13;
@@ -13,28 +13,22 @@ var InputBox = React.createClass({
 	},
 	handleKeyDown(event){
 		if (event.keyCode === ENTER_KEY_CODE) {
-			console.log(this.state.value);
-		  AppActions.create(this.state.value);
+		  create(this.state.value);
 		  this.setState({value: ''});
 		}
 	},
   render() {
-    return (       
+    return (
       <div className="taskerHeader">
-      	<input 	type="text" 
-      					className="inputTask" 
-      					placeholder="Enter a task" 
-      					value={this.state.value} 
-      					onChange = {this.handleChange}  
-      					onKeyDown={this.handleKeyDown}></input>
-      	
-      	
+      	<input
+          type="text"
+  				className="inputTask"
+  				placeholder="Enter a task"
+  				value={this.state.value}
+  				onChange = {this.handleChange}
+  				onKeyDown={this.handleKeyDown}>
+        </input>
       </div>
-    			
-    			
-    			
-    	
-        
     );
   }
 });
