@@ -9,6 +9,7 @@
 }
 .inputTask,.addOneButton{
 	width: 360px;
+	height: 67px;
 	font-size: 1.25em;
 	padding: 14px;
 }
