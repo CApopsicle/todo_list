@@ -1,53 +1,46 @@
-var AppDispatcher = require('../dispatchers/appDispatcher');
-var EventEmitter = require('events').EventEmitter;
-var AppConstants = require('../constants/appConstants');
-var assign = require('object-assign');
+const AppDispatcher = require('../dispatchers/appDispatcher');
+const EventEmitter = require('events').EventEmitter;
+const AppConstants = require('../constants/appConstants');
+const assign = require('object-assign');
 
-var CHANGE_EVENT = 'change';
-var stroage_id = 'todo_app';
+const CHANGE_EVENT = 'change';
+const stroage_id = 'todo_app';
 
-var _todos = JSON.parse(localStorage.getItem(stroage_id));
-var Msg = {};
+let _todos = JSON.parse(localStorage.getItem(stroage_id));
+const Msg = {};
 
-var appStore = assign({},EventEmitter.prototype,{
+const appStore = assign({}, EventEmitter.prototype, {
 
 
-	getAll: function() {
+  getAll() {
     return JSON.parse(localStorage.getItem(stroage_id));
   },
-	emitChange: function() {
+  emitChange() {
     this.emit(CHANGE_EVENT);
   },
-  addChangeListener: function(callback) {
+  addChangeListener(callback) {
     this.on(CHANGE_EVENT, callback);
   },
-  removeChangeListener: function(callback) {
+  removeChangeListener(callback) {
     this.removeListener(CHANGE_EVENT, callback);
+  },
+});
+
+AppDispatcher.register((action) => {
+  switch (action.actionType) {
+    case AppConstants.TODO_CREATE:
+      _todos = appStore.getAll();
+      appStore.emitChange();
+      break;
+    case AppConstants.TODO_DESTROY:
+      _todos = appStore.getAll();
+      appStore.emitChange();
+      break;
+    case AppConstants.TODO_COMPLETE:
+      _todos = appStore.getAll();
+      appStore.emitChange();
+      break;
+    default:
   }
 });
-
-AppDispatcher.register(function(action){
-
-	switch (action.actionType){
-		case AppConstants.TODO_CREATE:
-			_todos = appStore.getAll();
-			appStore.emitChange();
-			break;
-		case AppConstants.TODO_DESTROY:
-			_todos = appStore.getAll();
-			appStore.emitChange();
-			break;
-		case AppConstants.TODO_COMPLETE:
-			_todos = appStore.getAll();
-			appStore.emitChange();
-			break;
-		default:
-	}
-
-
-
-
-
-
-});
-module.exports = appStore;
+export default appStore;

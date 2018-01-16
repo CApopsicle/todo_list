@@ -1,4 +1,4 @@
-var keyMirror = require('keymirror');
+const keyMirror = require('keymirror');
 
 module.exports = keyMirror({
   TODO_CREATE: null,
@@ -8,5 +8,5 @@ module.exports = keyMirror({
   TODO_TOGGLE_COMPLETE_ALL: null,
   TODO_UNDO_COMPLETE: null,
   TODO_UPDATE_TEXT: null,
-  TODO_GET: null
+  TODO_GET: null,
 });
